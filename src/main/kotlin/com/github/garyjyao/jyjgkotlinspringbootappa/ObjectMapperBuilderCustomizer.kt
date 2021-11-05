@@ -1,4 +1,4 @@
-package spring.boot.kotlin.example
+package com.github.garyjyao.jyjgkotlinspringbootappa
 
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule
 import org.springframework.boot.autoconfigure.jackson.Jackson2ObjectMapperBuilderCustomizer

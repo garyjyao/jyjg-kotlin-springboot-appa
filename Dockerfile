@@ -1,5 +1,5 @@
 FROM jecklgamis/openjdk-8-jre
-MAINTAINER Jerrico Gamis <jecklgamis@gmail.com>
+MAINTAINER FirstName LastName <user@some-domain>
 
 ENV APP_HOME /app
 
@@ -8,7 +8,7 @@ RUN mkdir -m 0755 -p ${APP_HOME}/bin
 RUN mkdir -m 0755 -p ${APP_HOME}/config
 RUN mkdir -m 0755 -p ${APP_HOME}/logs/
 
-COPY target/spring-boot-kotlin-example.jar ${APP_HOME}/bin
+COPY target/jyjg-kotlin-springboot-appa.jar ${APP_HOME}/bin
 COPY docker-entrypoint.sh /
 
 RUN chown -R app:app ${APP_HOME}

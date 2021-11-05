@@ -1,4 +1,4 @@
-IMAGE_NAME:=jecklgamis/springboot-kotlin-example
+IMAGE_NAME:=garyjyao/springboot-kotlin-example
 IMAGE_TAG:=latest
 
 default:

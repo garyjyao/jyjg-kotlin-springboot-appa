@@ -18,7 +18,7 @@ def write_deployment_def(template, output, name, version):
 @click.command()
 @click.option('--version', default='latest', help='Docker image')
 def cli(version):
-    write_deployment_def('deployment-template.yaml', f"deployment-{version}.yaml", "spring-boot-kotlin-example", version)
+    write_deployment_def('deployment-template.yaml', f"deployment-{version}.yaml", "jyjg-kotlin-springboot-appa", version)
 
 
 if __name__ == '__main__':

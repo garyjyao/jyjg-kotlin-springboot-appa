@@ -36,7 +36,7 @@ spec:
     spec:
       containers:
         - name: "{{ name }}"
-          image: "jecklgamis/{{ name }}:{{ version }}"
+          image: "garyjyao/{{ name }}:{{ version }}"
           ports:
             - containerPort: 8080
             - containerPort: 8443

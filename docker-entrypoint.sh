@@ -1,3 +1,3 @@
 #!/bin/bash
-exec java -jar "bin/spring-boot-kotlin-example.jar"
+exec java -jar "bin/jyjg-kotlin-springboot-appa.jar"
 

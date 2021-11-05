@@ -1,4 +1,4 @@
-package spring.boot.kotlin.example.controller
+package com.github.garyjyao.jyjgkotlinspringbootappa.controller
 
 import com.google.common.collect.ImmutableMap
 import io.micrometer.core.annotation.Timed
