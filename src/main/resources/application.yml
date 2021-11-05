@@ -1,0 +1,29 @@
+application:
+  name: "spring-boot-kotlin-example"
+  description: "An example Spring Boot app using Kotlin"
+
+server:
+  http:
+    port: 8080
+  compression:
+    enabled: true
+  port: 8443
+  ssl:
+    key-store: classpath:keystore.pfx
+    key-store-password: changeit
+
+management:
+  endpoints:
+    enabled-by-default: true
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    metrics:
+      enabled: true
+    health:
+      enabled: true
+      show-details: always
+logging:
+  file:
+    name: logs/spring-boot-kotlin-example.log
