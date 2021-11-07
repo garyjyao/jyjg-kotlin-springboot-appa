@@ -2,6 +2,7 @@ package com.github.garyjyao.jyjgkotlinspringbootappa.service;
 
 import com.google.common.collect.ImmutableMap;
 import graphql.schema.DataFetcher;
+import graphql.schema.DataFetchingEnvironment;
 import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
@@ -39,13 +40,16 @@ public class GraphQLDataFetchers {
     );
 
     public DataFetcher getBookByIdDataFetcher() {
-        return dataFetchingEnvironment -> {
-            String bookId = dataFetchingEnvironment.getArgument("id");
-            return books
-                    .stream()
-                    .filter(book -> book.get("id").equals(bookId))
-                    .findFirst()
-                    .orElse(null);
+        return new DataFetcher() {
+            @Override
+            public Object get(DataFetchingEnvironment dataFetchingEnvironment) throws Exception {
+                String bookId = dataFetchingEnvironment.getArgument("id");
+                return books
+                        .stream()
+                        .filter(book -> book.get("id").equals(bookId))
+                        .findFirst()
+                        .orElse(null);
+            }
         };
     }
 
@@ -53,6 +57,17 @@ public class GraphQLDataFetchers {
         return dataFetchingEnvironment -> {
             Map<String,String> book = dataFetchingEnvironment.getSource();
             String authorId = book.get("authorId");
+            return authors
+                    .stream()
+                    .filter(author -> author.get("id").equals(authorId))
+                    .findFirst()
+                    .orElse(null);
+        };
+    }
+
+    public DataFetcher getAuthorByIdDataFetcher() {
+        return dataFetchingEnvironment -> {
+            String authorId = dataFetchingEnvironment.getArgument("id");
             return authors
                     .stream()
                     .filter(author -> author.get("id").equals(authorId))
